@@ -1,17 +1,18 @@
 
-// Demonstrate the Hailstone Numbers Algorithim using array
+// Demonstrate the Hailstone Numbers Algorithim using ArrayList
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
-class HailstoneSequenceArray {
+class HailstoneSequenceArrayList {
     public static void main(String... args) {
         Scanner in = new Scanner(System.in);
-        int[] a = new int[100]; // Initialize an array of integer that can hold 100 items
+        List<Integer> list = new ArrayList<>(); // Initialize an empty List
         int i = 0;
         System.out.print("Enter the first number of the sequence: ");
         int n = in.nextInt(); // Gets the initial number of the sequence
         while (n != 1) {
-            a[i] = n;
-            System.out.print(a[i] + " ");
+            list.add(n);
             i++; // Shorthand for i = i + 1
             if (n % 2 == 0) {
                 n = n / 2;
@@ -19,8 +20,8 @@ class HailstoneSequenceArray {
                 n = 3 * n + 1;
             }
         }
-        System.out.println(n);
-        a[i] = n;
+        list.add(n);
+        System.out.println(list);
         i++;
     }
 }
